@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#080d1c">
+<title>Ultimate 3D Carrom Arena</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">✦</span><div><b>ULTIMATE</b><small>3D CARROM ARENA</small></div></div>
+    <div class="top-stats"><span>🪙 <b id="wallet">1200</b></span><span>⭐ <b>LVL 1</b></span></div>
+  </header>
+
+  <main id="lobby" class="screen">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">NEXT-GEN 3D BOARD GAME</p>
+        <h1>CARROM<br><em>ARENA</em></h1>
+        <p class="sub">Aim. Strike. Pocket. Become the champion.</p>
+        <button class="primary big" id="playBtn">▶ PLAY NOW</button>
+      </div>
+      <div class="hero-art"><div class="orbit"></div><div class="hero-coin red">Q</div><div class="hero-coin white"></div><div class="hero-coin black"></div></div>
+    </section>
+    <section class="mode-section">
+      <div class="section-title"><span>GAME MODES</span><small>CHOOSE YOUR BATTLE</small></div>
+      <div class="mode-grid">
+        <button class="mode-card selected" data-mode="bot"><span class="mode-icon">🤖</span><b>VS COMPUTER</b><small>Play against AI</small></button>
+        <button class="mode-card" data-mode="local"><span class="mode-icon">👥</span><b>LOCAL 1 VS 1</b><small>Two players, one device</small></button>
+        <button class="mode-card" data-mode="practice"><span class="mode-icon">🎯</span><b>PRACTICE</b><small>Improve your aim</small></button>
+      </div>
+    </section>
+    <div class="lobby-footer"><span>● 3D WEB EDITION</span><span>Built for mobile & desktop</span></div>
+  </main>
+
+  <main id="game" class="screen hidden">
+    <div class="game-head">
+      <button class="icon-btn" id="homeBtn">⌂</button>
+      <div class="player"><span class="avatar">👑</span><div><b id="p1name">YOU</b><small id="p1score">0 POINTS</small></div></div>
+      <div class="versus">VS</div>
+      <div class="player right"><span class="avatar">🤖</span><div><b id="p2name">ROBOT</b><small id="p2score">0 POINTS</small></div></div>
+      <button class="icon-btn" id="soundBtn">♫</button>
+    </div>
+    <div class="turn-banner"><span class="turn-dot"></span><b id="turnText">YOUR TURN</b><small id="hintText">Drag from the striker to aim</small></div>
+    <div class="board-wrap">
+      <div id="scene"></div>
+      <div class="board-label">CARROM ARENA • 3D TABLE</div>
+    </div>
+    <div class="controls">
+      <div class="control-top"><label>SHOT POWER</label><b id="powerValue">65%</b></div>
+      <input id="power" type="range" min="10" max="100" value="65">
+      <div class="control-bottom"><span>SOFT</span><span>MAX POWER</span></div>
+      <div class="action-row">
+        <button class="secondary" id="resetBtn">↻ RESET</button>
+        <button class="primary strike-btn" id="strikeBtn">⚡ STRIKE</button>
+      </div>
+      <p class="mobile-tip">Touch and drag on the board to aim. Release to shoot, or press STRIKE.</p>
+    </div>
+  </main>
+  <div id="result" class="modal hidden">
+    <div class="modal-card"><div class="trophy">🏆</div><p class="eyebrow">MATCH COMPLETE</p><h2 id="resultTitle">YOU WIN!</h2><p id="resultText">Great shot, champion.</p><button class="primary" id="againBtn">PLAY AGAIN</button><button class="secondary" id="lobbyBtn">BACK TO LOBBY</button></div>
+  </div>
+  <div class="toast" id="toast"></div>
+</div>
+<script type="module" src="game.js"></script>
+</body>
+</html>
